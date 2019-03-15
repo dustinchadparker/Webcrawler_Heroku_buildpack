@@ -35,6 +35,8 @@ export default class Alldata extends React.Component<
         }));
 
         this.setState({ items });
+      }).catch(function(e) {
+        console.log(e);
       });
   };
 
