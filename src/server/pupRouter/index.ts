@@ -77,7 +77,7 @@ router.get("/", async (req, res, next) => {
 
     res.send(JSON.stringify(data));
   } catch (e) {
-    throw e;
+    res.status(500).send(e);
   }
 });
 
