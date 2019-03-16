@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/", async (req, res, next) => {
   try {
     //launches a new browser window
-    console.log("HERE2");
+    
     const browser = await puppeteer.launch({
       args: ['--no-sandbox', '--disable-setuid-sandbox'] ,
       headless: false
@@ -31,7 +31,6 @@ router.get("/", async (req, res, next) => {
       index: []
     };
     //loops through pages
-    console.log("HERE3");
     while (pageStartNums < parseInt(req.query.pages)) {
       //navigates to page and waits for DOMContent
       await page.goto(
@@ -76,7 +75,7 @@ router.get("/", async (req, res, next) => {
 
     //closes page; change page to 'browser' if you want it to close browser when done
     browser.close();
-    console.log("HERE4");
+
     res.send(JSON.stringify(data));
   } catch (e) {
     res.status(500).send(e);

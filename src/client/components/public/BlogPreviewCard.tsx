@@ -19,7 +19,7 @@ export default class BlogPreviewCard extends React.Component<
           {comment}
         </span>
         <span className="input-group-text col-2 text-white bg-dark">
-          {time}
+          {time} ago
         </span>
       </div>
     );

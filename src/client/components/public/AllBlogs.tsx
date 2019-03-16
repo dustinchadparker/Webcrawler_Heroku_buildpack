@@ -28,7 +28,6 @@ export default class Alldata extends React.Component<
     )
       .then(response => response.json())
       .then(data => {
-        console.log("HERE1");
         const items = data.index.map((_index: any, index: number) => ({
           price: data.price[index],
           time: data.time[index],
@@ -88,7 +87,7 @@ export default class Alldata extends React.Component<
             Comment{" "}
           </span>
           <span className="input-group-text col-2 text-white bg-dark">
-            Time{" "}
+            Posted{" "}
           </span>
         </div>
 
